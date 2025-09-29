@@ -1,10 +1,22 @@
 //import Card, { CardBody } from "./components/Card.tsx";
 import List from "./components/List.tsx";
 import Index from "./components/Button";
-import {useState} from "react";
 import Card from "./components/Card.tsx";
 //import list from "./components/List.tsx";
 import Alert from "./components/Alert";
+import {useState} from "react";
+import Button from "./components/Button";
+
+
+function App(){
+    const [sent, setSent] = useState(false);
+    const handleClick = () => setSent(true);
+    return (
+        <Button sent={sent} onClick={handleClick}>
+            Enviar
+        </Button>
+    )
+}
 
 /*
 function App(){
@@ -48,7 +60,7 @@ function App(){
 
 }
 */
-
+/*
 function App(){
     const [status, setStatus] = useState(true);
     const toggleStatus = () => setStatus(!status);
@@ -58,5 +70,8 @@ function App(){
         </Alert>
     )
 }
+*/
+
+
 
 export default App;
