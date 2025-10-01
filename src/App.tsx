@@ -7,11 +7,21 @@ import Alert from "./components/Alert";
 import {useState} from "react";
 import Button from "./components/Button";
 
-//
+
+
+//Modificar propiedad de objeto anidado
 function App(){
-    const [product, setProduct] = useState({name: "iPhone", stock: 25});
+    const [product, setProduct] = useState({
+        name: "iPhone",
+        stock: 25,
+        address: {
+            number: 42,
+            street: "Queen st"
+        }
+    });
+
     const handleClick = () => {
-        let newProduct = {...product, name: "Android"}
+        let newProduct = {...product, name: "Android", ...product.address, number: 45 }
         setProduct(newProduct);
     };
     return (
