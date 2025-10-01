@@ -7,7 +7,39 @@ import Alert from "./components/Alert";
 import {useState} from "react";
 import Button from "./components/Button";
 
+//
+function App(){
+    const [product, setProduct] = useState({name: "iPhone", stock: 25});
+    const handleClick = () => {
+        let newProduct = {...product, name: "Android"}
+        setProduct(newProduct);
+    };
+    return (
+        <div>
+            <button onClick={handleClick}>Agregar</button>
+            <p>{product.name} {product.stock}</p>
+        </div>
+    )
 
+}
+
+/*
+
+//Uso de useState para mantener el valor de las variables
+function App(){
+    const [count, setCount] = useState(0);
+    const [sent, setSent] = useState(false);
+    const handleClick = () => {
+        setCount(count + 1);
+        setSent(true)
+        console.log("Handle Click...", count, sent);
+    };
+    return <button onClick={handleClick}>Enviar</button>
+}
+*/
+
+
+/*
 function App(){
     const [sent, setSent] = useState(false);
     const handleClick = () => setSent(true);
@@ -17,6 +49,7 @@ function App(){
         </Button>
     )
 }
+*/
 
 /*
 function App(){

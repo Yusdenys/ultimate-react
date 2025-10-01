@@ -14,7 +14,7 @@ function Button({ children, sent, onClick }: Props) {
         <button
             disabled={sent}
             onClick={onClick} className={[styles.btn, styles.btnPrimary].join(" ")}>
-            {sent ? "Enviado" : children} {" "}
+            {sent ? "Enviado" : children} {""}
             <span style={{position: 'relative', top: 2 }}>
                 {sent ? <FaCheck color="white"/> : <IoIosSend color="white"/>}
             </span>
